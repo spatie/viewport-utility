@@ -1,0 +1,39 @@
+{
+  "name": "viewport-utility",
+  "version": "1.0.0",
+  "description": "JavaScript utility for the front end. Watches the viewport, stores/retrieves values and adds classes to the DOM.",
+  "main": "lib/viewport-utility.js",
+  "scripts": {
+    "test": "gulp test",
+    "prepublish": "gulp test && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spatie/viewport-utility.git"
+  },
+  "keywords": [
+    "spatie",
+    "viewport",
+    "javascript"
+  ],
+  "author": "Willem Van Bockstal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spatie/viewport-utility/issues"
+  },
+  "homepage": "https://github.com/spatie/viewport-utility",
+  "peerDependencies": {
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.4",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-sass": "^2.1.0",
+    "jquery": "^2.1.4",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

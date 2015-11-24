@@ -1,0 +1,99 @@
+// Vars
+
+$gray-lightest: #f0f0f0;
+$gray-light: #eee;
+$gray: #ddd;
+$gray-dark: #666;
+$blue: #004966;
+$blue-light: #147fa1;
+$white: #fff;
+
+// HTML
+
+* {
+ padding: 0;
+ box-sizing: border-box;
+ font-family: -apple-system-caption, sans-serif;
+
+}
+
+body {
+ padding: 10vw 10vh;
+}
+
+button {
+ font-weight: bold;
+ height: 3em;
+ padding: 0 1em;
+ background: $blue;
+ color: $white;
+ border-radius: 0.5em;
+ border: 0;
+}
+
+select {
+ border: solid 1px $gray;
+ height: 3em;
+}
+
+var {
+ font-family: Consolas, monospace;
+ font-style: normal;
+ margin: 0 .25em;
+ color: $blue-light;
+}
+
+code {
+ font-family: monospace;
+ color: $blue-light;
+
+ select + & {
+   padding: 0 1em;
+ }
+}
+
+h1 {
+ color: $gray;
+ font-size: 6em;
+ margin-bottom: 0.5em;
+}
+
+h2 {
+ margin-top: 2em;
+ font-size: 3em;
+ text-transform: uppercase;
+}
+
+h3 {
+ margin-top: 5em;
+ padding-top: 0.5em;
+ border-top: solid 1px $gray;
+
+ h2 + &{
+  margin-top: 1em;
+ }
+}
+
+a{
+ color: $blue-light;
+}
+
+// Classes
+
+.vh {
+ background-color: $gray-light;
+ border-bottom: solid 3px $gray;
+ padding: 5vw;
+ margin: 5vw 0;
+}
+
+.toolbar{
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ padding: 1em;
+ background: $blue;
+ color: $white;
+ text-align: center;
+}
