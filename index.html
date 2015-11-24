@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl"
+      data-viewport
+      data-viewport-small="900"
+      data-viewport-start="100"
+      data-viewport-end="100"
+>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="viewport-utility example">
+    <title>viewport-utility example</title>
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<div data-viewport-toolbar class="toolbar">I'm a toolbar. Classes on root element: <code data-example-css></code></div>
+<h1 id="head1">Examples</h1>
+
+<h2 id="functions">Functions</h2>
+
+<h3>disableScroll() / enableScroll()</h3>
+
+<p>
+    <button data-example-disable><span data-example-disable-verb>Disable</span> scroll</button>
+</p>
+<h3>isTopInView(target)</h3>
+
+<p>
+    <var>target</var> an offset or $element.
+</p>
+
+<p>Takes the toolbar into account, so 'Page top' will always be false because of the toolbar.</p>
+
+<p>
+    <select data-example-inview-item>
+        <option value="0">Page top</option>
+        <option value="$('#head1')">Title 'Examples'</option>
+        <option value="$('#functions')">Chapter 'functions'</option>
+    </select>
+    <var data-example-inview-result></var>
+</p>
+<h3>scrollTo(target, whenInView)</h3>
+
+<p>
+    <var>target</var> an offset or $element<br>
+    <var>whenInView</var> default true
+</p>
+
+<p>
+    Auto initiated on specified DOM elements.
+</p>
+
+<p>
+    <a data-viewport-scroll href="#">Scroll to top</a><br>
+    <a data-viewport-scroll="false" href="#functions">Scroll to 'Functions' chapter, only if it's out of
+        view</a><br>
+    <a data-viewport-scroll="true" href="#functions">Scroll to 'Functions' chapter, even if it's already in view</a>
+</p>
+
+<h3>scrollToHash()</h3>
+
+<p>Can be used in <code>$(window).load</code> event to scroll to a certain id on the page.</p>
+<button data-example-hash>Reload page with hash</button>
+<h2 id="vh">VH examples</h2>
+
+<p><code>data-viewport-vh</code> attribute example for older browsers. Soon to be obsolete.</p>
+
+<div class=vh data-viewport-vh="66.66">
+    <h3>2/3 page height</h3>
+</div>
+<div class=vh data-viewport-vh="100">
+    <h3>Full page</h3>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
