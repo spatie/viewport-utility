@@ -25,7 +25,7 @@ var viewport = require("viewport-utility").init({})
 
 ### Options
 
-You can change these before `init(), or pass an object in `init(options)`.
+You can change these before `init()`, or pass an object in `init(options)`.
 
 All config values can be overwritten by data-attributes on the root element.
 
