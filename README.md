@@ -3,6 +3,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/viewport-utility.svg?style=flat-square)](https://travis-ci.org/spatie/viewport-utility)
 [![Code Climate](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg?style=flat-square)](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg)
+[![npm](https://img.shields.io/npm/dt/viewport-utility.svg)]()
 
 **Viewport-utility** watches the browser; it updates CSS classes and JS properties for easy access in your script or stylesheet. 
 It also provides some simple functions to control scroll behaviour and a fallback for vh units in older browsers.
