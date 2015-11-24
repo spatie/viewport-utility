@@ -4,7 +4,9 @@
 [![Build Status](https://img.shields.io/travis/spatie/viewport-utility.svg?style=flat-square)](https://travis-ci.org/spatie/viewport-utility)
 [![Code Climate](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg?style=flat-square)](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg)
 
-JavaScript utility for the front end. Watches the viewport, scrolls, stores values and adds classes to the DOM.
+**Viewport-utility** watches the browser; it updates CSS classes and JS properties for easy access in your script or stylesheet. 
+It also provides some simple functions to control scroll behaviour and a fallback for vh units in older browsers.
+
 
 ## Installation
 

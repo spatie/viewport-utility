@@ -15,31 +15,31 @@ const config = {
 }
 
 gulp.task('default', () => {
-    gulp.start('example')
+    gulp.start('demo')
 })
 
 gulp.task('watch', () => {
-    gulp.watch([config.example.scss], ['example:scss'])
-    gulp.watch(['**/*.js'], ['example:es6'])
+    gulp.watch([config.example.scss], ['demo:scss'])
+    gulp.watch(['**/*.js'], ['demo:es6'])
 })
 
 gulp.task('test', () => {
     gulp.start('lint')
 })
 
-gulp.task('example', () => {
-    gulp.start('example:scss')
-        .start('example:es6')
+gulp.task('demo', () => {
+    gulp.start('demo:scss')
+        .start('demo:es6')
 })
 
-gulp.task('example:scss', () => {
+gulp.task('demo:scss', () => {
     return gulp.src(config.example.scss)
         .pipe(sass({ style: 'compressed' }))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(gulp.dest(config.example.css))
 })
 
-gulp.task('example:es6', () => {
+gulp.task('demo:es6', () => {
     return browserify(config.example.es6)
         .transform('babelify' , {presets: ['es2015']})
         .bundle()
