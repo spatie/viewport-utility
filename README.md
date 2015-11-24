@@ -104,20 +104,17 @@ Classes you can use in Sass.
 
 Data-attributes on root element will override the js options.
 
-``` html
-    
+```html
 <html data-viewport 
       data-viewport-small="900"
       data-viewport-start="100"
       data-viewport-end="100"
       data-viewport-scrolloffset="50">
-
 ```
 
 Default html needed when you don't override options: 
 
-```
-
+```html
 <div data-viewport-toolbar>When using scroll functions: don't scroll under me</div>
 ...
 <a data-viewport-scroll href="#">Scroll to top</a>
@@ -125,7 +122,6 @@ Default html needed when you don't override options:
 <a data-viewport-scroll=false href="#anchor">Scroll to anchor, only if out of view</a>
 ...
 <div data-viewport-vh="50">Half page for iOS7</div>
-  
 ```
 
 
