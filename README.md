@@ -14,7 +14,7 @@ $ npm i viewport-utility
 
 ## Demo
 
-There is a small [demo page](https://spatie.github.io/viewport-utility)
+There is a small [demo page](https://spatie.github.io/viewport-utility).
 
 ### Usage
 ``` js
@@ -25,7 +25,7 @@ var viewport = require("viewport-utility").init({})
 
 ### Options
 
-You can change these before init(), or pass an object in `init()`.
+You can change these before `init(), or pass an object in `init(options)`.
 
 All config values can be overwritten by data-attributes on the root element.
 
@@ -98,7 +98,7 @@ Classes you can use in Sass.
 
 ```
 
-### Dom
+### DOM
 
 Data-attributes on root element will override the js options.
 
