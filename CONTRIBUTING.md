@@ -7,11 +7,11 @@ We accept contributions via Pull Requests on [Github](https://github.com/spatie/
 
 ## Pull Requests
 
-- Write in es6 
+- Write ES6. 
 
 - Your patch won't be accepted if it doesn't pass `gulp lint`.
 
-- Try to add an example in the `/demo` section. Build demo assets with `gulp` or ``ulp watch.
+- Try to add an example in the `/demo` section. Build demo assets with `gulp` or `gulp watch`.
 
 - **Document any change in behaviour** - Make sure the `README.md`, `CHANGELOG.md` and any other relevant documentation are kept up-to-date.
 
