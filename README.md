@@ -5,7 +5,7 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg?style=flat-square)](https://img.shields.io/codeclimate/github/spatie/viewport-utility.svg)
 [![npm](https://img.shields.io/npm/dt/viewport-utility.svg?style=flat-square)](https://www.npmjs.com/package/viewport-utility)
 
-**Viewport-utility** watches the browser; it updates CSS classes and JS properties for easy access in your script or stylesheet. 
+**Viewport-utility** watches the browser and updates DOM classes and JS properties for easy access in your script or stylesheet. 
 It also provides some simple functions to control scroll behaviour and a fallback for vh units in older browsers.
 
 
