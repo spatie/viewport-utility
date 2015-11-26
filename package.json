@@ -1,11 +1,11 @@
 {
   "name": "viewport-utility",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript utility for the front end. Watches the viewport, stores/retrieves values and adds classes to the DOM.",
   "main": "lib/viewport-utility.js",
   "scripts": {
     "test": "gulp test",
-    "prepublish": "gulp test && gulp"
+    "prepublish": "gulp test && gulp build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "browserify": "^12.0.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-sass": "^2.1.0",
     "jquery": "^2.1.4",

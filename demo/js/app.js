@@ -49,9 +49,14 @@ window.setInterval(function () {
 },{"./../../lib/viewport-utility":2,"jquery":3}],2:[function(require,module,exports){
 'use strict';
 
-function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+function _typeof2(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+function _typeof(obj) {
+    return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+}
 
 var $ = require('jquery');
+
 // the object
 module.exports = {
     root: $('[data-viewport]'),

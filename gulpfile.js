@@ -2,6 +2,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const eslint = require('gulp-eslint')
 const gulp = require('gulp')
 const sass = require('gulp-sass')
+const babel = require('gulp-babel')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 
@@ -15,12 +16,14 @@ const config = {
 }
 
 gulp.task('default', () => {
-    gulp.start('demo')
+    gulp.start('build')
 })
 
-gulp.task('watch', () => {
-    gulp.watch([config.example.scss], ['demo:scss'])
-    gulp.watch(['**/*.js'], ['demo:es6'])
+
+gulp.task('build', () => {
+    return gulp.src("src/viewport-utility.js")
+        .pipe(babel({presets: ['es2015']}))
+        .pipe(gulp.dest("lib"))
 })
 
 gulp.task('test', () => {
@@ -47,8 +50,9 @@ gulp.task('demo:es6', () => {
         .pipe(gulp.dest(config.example.js))
 })
 
+
 gulp.task('lint', () => {
-    return gulp.src('**/*.js')
+    return gulp.src(['src/*.js', 'demo/es6/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
 })
