@@ -21,9 +21,9 @@ gulp.task('default', () => {
 
 
 gulp.task('build', () => {
-    return gulp.src("src/viewport-utility.js")
+    return gulp.src('src/viewport-utility.js')
         .pipe(babel({presets: ['es2015']}))
-        .pipe(gulp.dest("lib"))
+        .pipe(gulp.dest('lib'))
 })
 
 gulp.task('test', () => {
