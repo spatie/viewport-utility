@@ -156,7 +156,7 @@ module.exports = {
 
         viewport._readConfigFromDom().update()
         $(window).load(() => {
-            viewport.root.addClass('$viewport-loaded')
+            viewport.root.removeClass('$viewport-loading').addClass('$viewport-loaded')
             viewport.loaded = true
         }).scroll(() => {
             viewport._afterScroll()

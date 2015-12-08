@@ -104,13 +104,15 @@ Classes you can use in Sass.
 ### DOM
 
 Data-attributes on root element will override the js options.
+The `$viewport-loading` class will be removed on page load.
 
 ```html
 <html data-viewport 
       data-viewport-small="900"
       data-viewport-start="100"
       data-viewport-end="100"
-      data-viewport-scrolloffset="50">
+      data-viewport-scrolloffset="50"
+      class="$viewport-loading">
 ```
 
 Default html needed when you don't override options: 
