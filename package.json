@@ -1,6 +1,6 @@
 {
   "name": "viewport-utility",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JavaScript utility for the front end. Watches the viewport, stores/retrieves values and adds classes to the DOM.",
   "main": "lib/viewport-utility.js",
   "scripts": {
@@ -36,5 +36,8 @@
     "gulp-sass": "^2.1.0",
     "jquery": "^2.1.4",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+      "lodash.merge": "^3.3.2"
   }
 }

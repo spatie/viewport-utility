@@ -2,6 +2,11 @@
 
 All Notable changes to will be documented in this file
 
+## 1.0.4 - 2015-12-16
+### Changed
+- Add semicolons to the syntax.
+- Use `lodash.merge` to merge options.
+
 ## 1.0.3 - 2015-12-08
 ### Added
 - Added `removeClass('$viewport-loading')` on load
