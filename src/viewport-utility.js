@@ -99,6 +99,9 @@ module.exports = {
     },
     _assureOffset(target){
         let offsetY = 0;
+        if (typeof target === 'string') {
+            target = $(target);
+        }
         if (target instanceof $ && target.length) {
             offsetY = target.offset().top;
         }

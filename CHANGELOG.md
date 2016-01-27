@@ -2,6 +2,10 @@
 
 All Notable changes to will be documented in this file
 
+## 1.0.5 - 2016-01-27
+### Added
+- Use selector for `scrollTo()` (besides jQuery object or offset)
+
 ## 1.0.4 - 2015-12-16
 ### Changed
 - Add semicolons to the syntax.
