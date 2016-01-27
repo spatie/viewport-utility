@@ -79,7 +79,7 @@ disableScroll() // on the root element
 enableScroll() 
 init(options) // init module with options
 isTopInView(target) // yes or no for offset or $element
-scrollTo(target, whenInView) // scroll to offset or $element, also to elements that are visible already (default:true)
+scrollTo(target, whenInView) // scroll to offset, selector or $element, also to elements that are visible already (default:true)
 scrollToHash() // scroll to hash in url, typically on page load
 update() // update handlers and module
 
@@ -91,6 +91,7 @@ Classes you can use in Sass.
 
 ``` css
 
+.\$viewport-loading{}
 .\$viewport-loaded{}
 .\$viewport-small{}
 .\$viewport-large{}
