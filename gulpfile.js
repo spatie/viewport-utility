@@ -30,7 +30,7 @@ gulp.task('test', () => {
     gulp.start('lint')
 })
 
-gulp.task('demo', () => {
+gulp.task('demo', ['build'], () => {
     gulp.start('demo:scss')
         .start('demo:es6')
 })

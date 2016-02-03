@@ -2,6 +2,10 @@
 
 All Notable changes to will be documented in this file
 
+## 1.1.1 - 2016-02-03
+### Added
+- Added direction prop and css classes
+
 ## 1.1.0 - 2016-02-03
 ### Added
 - Added orientation prop and css classes

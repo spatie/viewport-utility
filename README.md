@@ -68,9 +68,15 @@ state: {
     started: false,
     ended: false,
     loaded: false,
+},
+orientation: {
     portrait: false,
     landscape: false
 },
+direction: {
+    down: false,
+    up: false
+}
     
 ```
 
@@ -95,8 +101,10 @@ Classes you can use in Sass.
 
 .\$viewport-loading{}
 .\$viewport-loaded{}
-.\$viewport-portrait{}
-.\$viewport-landscape{}
+.\$viewport-orientation-portrait{}
+.\$viewport-orientation-landscape{}
+.\$viewport-direction-down{}
+.\$viewport-direction-up{}
 .\$viewport-small{}
 .\$viewport-large{}
 .\$viewport-started{}

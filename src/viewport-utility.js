@@ -29,10 +29,17 @@ module.exports = {
         start: false,
         end: false,
         loaded: false,
+    },
+    orientation: {
         portrait: false,
         landscape: false,
     },
-    // Internal functions
+    direction: {
+        down: false,
+        up: false
+    },
+    // Internal functions, vars
+    _lastPosition: 0,
     _readConfigFromDom() {
         this.lang = document.documentElement.lang ? document.documentElement.lang.toLowerCase() : 'en';
         Object.keys(this.config).map( (key) => {
@@ -63,14 +70,36 @@ module.exports = {
             this.start = $(window).scrollTop();
             this.end = this.start + this.height;
             this.state.started = this.start > this.config.start;
-            this.root.toggleClass('$viewport-started', this.state.started);
             this.state.ended = this.end > $(document).height() - this.config.end;
-            this.root.toggleClass('$viewport-ended', this.state.ended);
+
+            clearTimeout(this.directionTimeOut);
+            this.directionTimeOut = setTimeout( () => {
+                this._setDirection();
+            }, 100);
+
+            this.root
+                .toggleClass('$viewport-started', this.state.started)
+                .toggleClass('$viewport-ended', this.state.ended)
+
         }
         return this;
     },
     _afterResize() {
         return this._measure()._fixVH()._afterScroll();
+    },
+    _setDirection() {
+        this.direction.up = this.start < this._lastPosition;
+
+        // edge cases
+        if(this.state.ended) this.direction.up = true;
+        if(this.start < 1) this.direction.up = false;
+
+        this.direction.down = !this.direction.up;
+        this._lastPosition = this.start;
+        this.root
+            .toggleClass('$viewport-direction-down', this.direction.down)
+            .toggleClass('$viewport-direction-up', this.direction.up);
+        return this;
     },
     _initHandlers() {
         let viewport = this;
@@ -87,14 +116,15 @@ module.exports = {
         //measure
         this.height = $(window).height();
         this.width = $(window).width();
-        this.state.landscape = (this.width / this.height) > 1 ;
-        this.state.portrait = !this.state.landscape;
+        this.orientation.landscape = (this.width / this.height) > 1 ;
+        this.orientation.portrait = !this.orientation.landscape;
         this.state.small = this.config.small > this.width;
         this.state.large = !this.state.small;
-        this.root.toggleClass('$viewport-small', this.state.small)
+        this.root
+            .toggleClass('$viewport-small', this.state.small)
             .toggleClass('$viewport-large', this.state.large)
-            .toggleClass('$viewport-landscape', this.state.landscape)
-            .toggleClass('$viewport-portrait', this.state.portrait);
+            .toggleClass('$viewport-orientation-portrait', this.orientation.portrait)
+            .toggleClass('$viewport-orientation-landscape', this.orientation.landscape);
         return this;
     },
     _fixVH() {
