@@ -24,11 +24,13 @@ module.exports = {
     state: {
         disabledScroll : false,
         small: false,
-        large : true,
+        large : false,
         scrolling: false,
         start: false,
         end: false,
-        loaded: true,
+        loaded: false,
+        portrait: false,
+        landscape: false,
     },
     // Internal functions
     _readConfigFromDom() {
@@ -85,9 +87,14 @@ module.exports = {
         //measure
         this.height = $(window).height();
         this.width = $(window).width();
+        this.state.landscape = (this.width / this.height) > 1 ;
+        this.state.portrait = !this.state.landscape;
         this.state.small = this.config.small > this.width;
         this.state.large = !this.state.small;
-        this.root.toggleClass('$viewport-small', this.state.small).toggleClass('$viewport-large', this.state.large);
+        this.root.toggleClass('$viewport-small', this.state.small)
+            .toggleClass('$viewport-large', this.state.large)
+            .toggleClass('$viewport-landscape', this.state.landscape)
+            .toggleClass('$viewport-portrait', this.state.portrait);
         return this;
     },
     _fixVH() {

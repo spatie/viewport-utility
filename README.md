@@ -60,15 +60,16 @@ height: 0,
 width: 0,
 start: 0, // Beginning of viewport relative to document
 end: 0, // End of viewport relative to document
-orientation: 'landscape',
 state: {
     scrollDisabled : false,
     small: false,
-    large: true,
+    large: false,
     scrolling: false,
     started: false,
     ended: false,
     loaded: false,
+    portrait: false,
+    landscape: false
 },
     
 ```
