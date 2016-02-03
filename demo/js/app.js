@@ -61,6 +61,7 @@
 		lang: 'en',
 		// Default config
 		config: {
+			directionOffset: 0,
 			scrollOffset: 0,
 			small: 768,
 			start: 0,
@@ -78,11 +79,18 @@
 			scrolling: false,
 			start: false,
 			end: false,
-			loaded: false,
+			loaded: false
+		},
+		orientation: {
 			portrait: false,
 			landscape: false
 		},
-		// Internal functions
+		direction: {
+			down: false,
+			up: false
+		},
+		// Internal functions, vars
+		_lastPosition: 0,
 		_readConfigFromDom: function _readConfigFromDom() {
 			var _this = this;
 
@@ -110,19 +118,38 @@
 			return this;
 		},
 		_afterScroll: function _afterScroll() {
+			var _this2 = this;
+
 			// only do stuff if we need to watch scroll
 			if (!this.state.scrolling) {
 				this.start = $(window).scrollTop();
 				this.end = this.start + this.height;
 				this.state.started = this.start > this.config.start;
-				this.root.toggleClass('$viewport-started', this.state.started);
 				this.state.ended = this.end > $(document).height() - this.config.end;
-				this.root.toggleClass('$viewport-ended', this.state.ended);
+
+				clearTimeout(this.directionTimeOut);
+				this.directionTimeOut = setTimeout(function () {
+					_this2._setDirection();
+				}, 100);
+
+				this.root.toggleClass('$viewport-started', this.state.started).toggleClass('$viewport-ended', this.state.ended);
 			}
 			return this;
 		},
 		_afterResize: function _afterResize() {
 			return this._measure()._fixVH()._afterScroll();
+		},
+		_setDirection: function _setDirection() {
+			this.direction.up = this.start + this.config.directionOffset < this._lastPosition;
+
+			// edge cases
+			if (this.state.ended) this.direction.up = true;
+			if (this.start < 1) this.direction.up = false;
+
+			this.direction.down = !this.direction.up;
+			this._lastPosition = this.start;
+			this.root.toggleClass('$viewport-direction-down', this.direction.down).toggleClass('$viewport-direction-up', this.direction.up);
+			return this;
 		},
 		_initHandlers: function _initHandlers() {
 			var viewport = this;
@@ -139,18 +166,18 @@
 			//measure
 			this.height = $(window).height();
 			this.width = $(window).width();
-			this.state.landscape = this.width / this.height > 1;
-			this.state.portrait = !this.state.landscape;
+			this.orientation.landscape = this.width / this.height > 1;
+			this.orientation.portrait = !this.orientation.landscape;
 			this.state.small = this.config.small > this.width;
 			this.state.large = !this.state.small;
-			this.root.toggleClass('$viewport-small', this.state.small).toggleClass('$viewport-large', this.state.large).toggleClass('$viewport-landscape', this.state.landscape).toggleClass('$viewport-portrait', this.state.portrait);
+			this.root.toggleClass('$viewport-small', this.state.small).toggleClass('$viewport-large', this.state.large).toggleClass('$viewport-orientation-portrait', this.orientation.portrait).toggleClass('$viewport-orientation-landscape', this.orientation.landscape);
 			return this;
 		},
 		_fixVH: function _fixVH() {
-			var _this2 = this;
+			var _this3 = this;
 
 			this.vhItems.each(function (key, value) {
-				var unit = _this2.height / 100;
+				var unit = _this3.height / 100;
 				$(value).outerHeight(Math.round(unit * $(value).data('viewport-vh')));
 			});
 			return this;
