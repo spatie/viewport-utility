@@ -60,6 +60,7 @@ height: 0,
 width: 0,
 start: 0, // Beginning of viewport relative to document
 end: 0, // End of viewport relative to document
+orientation: 'landscape',
 state: {
     scrollDisabled : false,
     small: false,
@@ -93,6 +94,8 @@ Classes you can use in Sass.
 
 .\$viewport-loading{}
 .\$viewport-loaded{}
+.\$viewport-portrait{}
+.\$viewport-landscape{}
 .\$viewport-small{}
 .\$viewport-large{}
 .\$viewport-started{}

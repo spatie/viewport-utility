@@ -2,6 +2,10 @@
 
 All Notable changes to will be documented in this file
 
+## 1.1.0 - 2016-02-03
+### Added
+- Added orientation prop and css classes
+
 ## 1.0.5 - 2016-01-27
 ### Added
 - Use selector for `scrollTo()` (besides jQuery object or offset)
