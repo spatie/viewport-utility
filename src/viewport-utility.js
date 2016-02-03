@@ -36,7 +36,7 @@ module.exports = {
     },
     direction: {
         down: false,
-        up: false
+        up: false,
     },
     // Internal functions, vars
     _lastPosition: 0,
@@ -79,7 +79,7 @@ module.exports = {
 
             this.root
                 .toggleClass('$viewport-started', this.state.started)
-                .toggleClass('$viewport-ended', this.state.ended)
+                .toggleClass('$viewport-ended', this.state.ended);
 
         }
         return this;
