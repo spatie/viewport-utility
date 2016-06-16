@@ -2,6 +2,10 @@
 
 All Notable changes to will be documented in this file
 
+## 1.2.0 - 2016-06-16
+### Added
+- Added `classPrefix` setting for CSS class names
+
 ## 1.1.1 - 2016-02-03
 ### Added
 - Added direction prop and css classes

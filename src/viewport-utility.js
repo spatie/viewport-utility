@@ -8,6 +8,7 @@ module.exports = {
     toolbar: $('[data-viewport-toolbar]'),
     vhItems: $('[data-viewport-vh]'),
     scrollLinks: $('[data-viewport-scroll]'),
+    classPrefix: '$viewport-',
     lang: 'en',
     // Default config
     config: {
@@ -54,12 +55,12 @@ module.exports = {
     },
     _executeScroll(offsetY) {
         this.state.scrolling = true;
-        this.root.addClass('$viewport-scrolling');
+        this.root.addClass(this.classPrefix + 'scrolling');
         offsetY = offsetY - this.config.scrollOffset - this._addToolbar();
         let viewport = this;
         $('body,html').animate({ scrollTop: offsetY }, '5000', 'swing', function () {
             viewport.state.scrolling = false;
-            viewport.root.removeClass('$viewport-scrolling');
+            viewport.root.removeClass(this.classPrefix + 'scrolling');
             viewport._afterScroll();
         });
         return this;
@@ -78,8 +79,8 @@ module.exports = {
             }, 100);
 
             this.root
-                .toggleClass('$viewport-started', this.state.started)
-                .toggleClass('$viewport-ended', this.state.ended);
+                .toggleClass(this.classPrefix + 'started', this.state.started)
+                .toggleClass(this.classPrefix + 'ended', this.state.ended);
 
         }
         return this;
@@ -97,8 +98,8 @@ module.exports = {
         this.direction.down = !this.direction.up;
         this._lastPosition = this.start;
         this.root
-            .toggleClass('$viewport-direction-down', this.direction.down)
-            .toggleClass('$viewport-direction-up', this.direction.up);
+            .toggleClass(this.classPrefix + 'direction-down', this.direction.down)
+            .toggleClass(this.classPrefix + 'direction-up', this.direction.up);
         return this;
     },
     _initHandlers() {
@@ -121,10 +122,10 @@ module.exports = {
         this.state.small = this.config.small > this.width;
         this.state.large = !this.state.small;
         this.root
-            .toggleClass('$viewport-small', this.state.small)
-            .toggleClass('$viewport-large', this.state.large)
-            .toggleClass('$viewport-orientation-portrait', this.orientation.portrait)
-            .toggleClass('$viewport-orientation-landscape', this.orientation.landscape);
+            .toggleClass(this.classPrefix + 'small', this.state.small)
+            .toggleClass(this.classPrefix + 'large', this.state.large)
+            .toggleClass(this.classPrefix + 'orientation-portrait', this.orientation.portrait)
+            .toggleClass(this.classPrefix + 'orientation-landscape', this.orientation.landscape);
         return this;
     },
     _fixVH() {
@@ -170,12 +171,12 @@ module.exports = {
     },
     disableScroll() {
         this.state.disabledScroll = true;
-        this.root.css('overflow', 'hidden').addClass('$viewport-disabled-scroll');
+        this.root.css('overflow', 'hidden').addClass(this.classPrefix + 'disabled-scroll');
         return this;
     },
     enableScroll() {
         this.state.disabledScroll = false;
-        this.root.css('overflow', 'initial').removeClass('$viewport-disabled-scroll');
+        this.root.css('overflow', 'initial').removeClass(this.classPrefix + 'disabled-scroll');
         return this;
     },
     update() {
@@ -190,7 +191,7 @@ module.exports = {
 
         viewport._readConfigFromDom().update();
         $(window).load(() => {
-            viewport.root.removeClass('$viewport-loading').addClass('$viewport-loaded');
+            viewport.root.removeClass(this.classPrefix + 'loading').addClass(this.classPrefix + 'loaded');
             viewport.loaded = true;
         }).scroll(() => {
             viewport._afterScroll();

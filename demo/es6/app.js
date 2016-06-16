@@ -1,6 +1,7 @@
 const $ = require('jquery');
 
 const viewport = require('./../../lib/viewport-utility').init({
+    cssPrefix : 'is-',
     toolbar: $('.toolbar'), // Unneccesary, only for demo
     config: {
         small: 800,

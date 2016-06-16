@@ -38,6 +38,7 @@ All config values can be overwritten by data-attributes on the root element.
     toolbar: $('[data-viewport-toolbar]'), // When scrolling to an offset, take element into account
     vhItems: $('[data-viewport-vh]'), // Fix vh units for older browsers & iOS7
     scrollLinks: $('[data-viewport-scroll]'), // Scroll to anchor in href
+    classPrefix: '$viewport-',
     lang: 'en', // Set by lang-attribute on root element
     // Default config
     config: {
@@ -96,6 +97,7 @@ update() // update handlers and module
 ### CSS
 
 Classes you can use in Sass.
+Default setting is `classPrefix: '$viewport-'`.
 
 ``` css
 
