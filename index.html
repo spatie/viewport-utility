@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="nl"
       data-viewport
-      data-viewport-small="900"
       data-viewport-start="100"
       data-viewport-end="100"
-      class="$viewport-loading"
+      class="is-loading"
 >
 <head>
     <meta charset="utf-8">
     <meta name="description" content="viewport-utility example">
     <title>viewport-utility example</title>
     <link href="demo/css/app.css" rel="stylesheet">
-    <script src="demo/js/app.js" defer></script>
 </head>
 <body>
 <div data-viewport-toolbar class="toolbar">I'm a toolbar. Classes on root element: <code data-example-css></code></div>
@@ -43,12 +41,12 @@
 <h3>scrollTo(target, whenInView)</h3>
 
 <p>
-    <var>target</var> an offset, selector or $element<br>
+    <var>target</var> an offset or $element<br>
     <var>whenInView</var> default true
 </p>
 
 <p>
-    Auto initiated on DOM elements with <code>data-viewport-scroll</code>
+    Auto initiated on specified DOM elements.
 </p>
 
 <p>
@@ -72,5 +70,6 @@
 <div class=vh data-viewport-vh="100">
     <h3>Full page</h3>
 </div>
+<script src="demo/js/app.js"></script>
 </body>
 </html>
