@@ -2,6 +2,10 @@
 
 All Notable changes to will be documented in this file
 
+## 1.2.2 - 2016-10-17
+### Added
+- Package cleanup
+
 ## 1.2.1 - 2016-10-17
 ### Added
 - Allow jquery 3.0
