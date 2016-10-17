@@ -1,6 +1,6 @@
 const $ = require('jquery');
 
-const viewport = require('./../../lib/viewport-utility').init({
+const viewport = require('./../../src').init({
     classPrefix : 'is-',
     toolbar: $('.toolbar'), // Unneccesary, only for demo
     config: {
@@ -14,7 +14,7 @@ window.viewport = viewport; //easy console debugging
 
 $('[data-example-disable]').on('click', function(){
     viewport.state.disabledScroll ? viewport.enableScroll() : viewport.disableScroll();
-    $('[data-example-disable-verb]').text( viewport.state.disabledScroll ? 'Enable' : 'Disable');
+    $('[data-example-disable-verb]').text(viewport.state.disabledScroll ? 'Enable' : 'Disable');
 });
 
 

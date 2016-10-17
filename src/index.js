@@ -43,21 +43,21 @@ module.exports = {
     _lastPosition: 0,
     _readConfigFromDom() {
         this.lang = document.documentElement.lang ? document.documentElement.lang.toLowerCase() : 'en';
-        Object.keys(this.config).map( (key) => {
-            let attribute = `viewport-${key.toLowerCase()}`;
-            let value = parseInt(this.root.data(attribute));
+        Object.keys(this.config).map((key) => {
+            const attribute = `viewport-${key.toLowerCase()}`;
+            const value = parseInt(this.root.data(attribute));
             if (value > 0) this.config[key] = value;
         });
         return this;
     },
-    _addToolbar(){
+    _addToolbar() {
         return this.toolbar.size() ? this.toolbar.outerHeight() : 0;
     },
     _executeScroll(offsetY) {
         this.state.scrolling = true;
         this.root.addClass(this.classPrefix + 'scrolling');
         offsetY = offsetY - this.config.scrollOffset - this._addToolbar();
-        let viewport = this;
+        const viewport = this;
         $('body,html').animate({ scrollTop: offsetY }, '5000', 'swing', function () {
             viewport.state.scrolling = false;
             viewport.root.removeClass(this.classPrefix + 'scrolling');
@@ -74,7 +74,7 @@ module.exports = {
             this.state.ended = this.end > $(document).height() - this.config.end;
 
             clearTimeout(this.directionTimeOut);
-            this.directionTimeOut = setTimeout( () => {
+            this.directionTimeOut = setTimeout(() => {
                 this._setDirection();
             }, 100);
 
@@ -92,8 +92,8 @@ module.exports = {
         this.direction.up = this.start < this._lastPosition;
 
         // edge cases
-        if(this.state.ended) this.direction.up = true;
-        if(this.start < 1) this.direction.up = false;
+        if (this.state.ended) this.direction.up = true;
+        if (this.start < 1) this.direction.up = false;
 
         this.direction.down = !this.direction.up;
         this._lastPosition = this.start;
@@ -103,13 +103,13 @@ module.exports = {
         return this;
     },
     _initHandlers() {
-        let viewport = this;
-        this.scrollLinks.on('click', function(e) {
+        const viewport = this;
+        this.scrollLinks.on('click', function (e) {
             e.stopPropagation();
             e.preventDefault();
-            let href = $(this).attr('href');
-            let whenInView = $(this).data('viewport-scroll') === '' ? true : $(this).data('viewport-scroll');
-            viewport.scrollTo(href == '#' ? 0 : $(href), whenInView);
+            const href = $(this).attr('href');
+            const whenInView = $(this).data('viewport-scroll') === '' ? true : $(this).data('viewport-scroll');
+            viewport.scrollTo(href === '#' ? 0 : $(href), whenInView);
         });
         return this;
     },
@@ -130,12 +130,12 @@ module.exports = {
     },
     _fixVH() {
         this.vhItems.each((key, value)=>{
-            let unit = this.height / 100;
+            const unit = this.height / 100;
             $(value).outerHeight(Math.round(unit * $(value).data('viewport-vh')));
         });
         return this;
     },
-    _assureOffset(target){
+    _assureOffset(target) {
         let offsetY = 0;
         if (typeof target === 'string') {
             target = $(target);
@@ -150,11 +150,11 @@ module.exports = {
     },
     // External functions
     isTopInView(target) {
-        let offsetY = this._assureOffset(target) - this._addToolbar();
+        const offsetY = this._assureOffset(target) - this._addToolbar();
         return offsetY >= this.start && offsetY <= this.end;
     },
     scrollTo(target, whenInView) {
-        let offsetY = this._assureOffset(target);
+        const offsetY = this._assureOffset(target);
         whenInView = typeof whenInView === 'undefined' ? true : whenInView;
         if (!whenInView && this.isTopInView(offsetY)) {
             return this;
@@ -163,7 +163,7 @@ module.exports = {
         return this;
     },
     scrollToHash() {
-        if (window.location.hash != '') {
+        if (window.location.hash) {
             $(window).scrollTop(0);
             this.scrollTo($(window.location.hash));
         }
@@ -185,7 +185,7 @@ module.exports = {
     },
     init(options) {
         const viewport = this;
-        if(options) {
+        if (options) {
             merge(this, options);
         }
 
