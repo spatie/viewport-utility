@@ -4,8 +4,7 @@
   "description": "JavaScript utility for the front end. Watches the viewport, stores/retrieves values and adds classes to the DOM.",
   "main": "dist/viewport-utility.js",
   "scripts": {
-    "test": "gulp test",
-    "prepublish": "gulp test && gulp build",
+    "prepublish": "gulp build",
     "lint": "eslint src --fix"
   },
   "repository": {

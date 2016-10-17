@@ -1,5 +1,4 @@
 const autoprefixer = require('gulp-autoprefixer');
-const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
@@ -24,10 +23,6 @@ gulp.task('build', () => {
     return gulp.src('src/index.js')
         .pipe(babel())
         .pipe(gulp.dest('dist'));
-});
-
-gulp.task('test', () => {
-    gulp.start('lint');
 });
 
 gulp.task('demo', ['build'], () => {
