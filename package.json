@@ -1,6 +1,6 @@
 {
   "name": "viewport-utility",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "JavaScript utility for the front end. Watches the viewport, stores/retrieves values and adds classes to the DOM.",
   "main": "dist/index.js",
   "scripts": {
