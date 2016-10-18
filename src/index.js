@@ -190,7 +190,7 @@ module.exports = {
         }
 
         viewport._readConfigFromDom().update();
-        $(window).load(() => {
+        $(window).on('load', () => {
             viewport.root.removeClass(this.classPrefix + 'loading').addClass(this.classPrefix + 'loaded');
             viewport.loaded = true;
         }).scroll(() => {
