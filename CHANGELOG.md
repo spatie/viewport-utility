@@ -2,6 +2,9 @@
 
 All Notable changes to will be documented in this file
 
+## 1.2.6 - 2016-10-26
+- jQuery 3 fixes
+
 ## 1.2.5 - 2016-10-18
 - jQuery 3 fixes
 

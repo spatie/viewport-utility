@@ -51,7 +51,7 @@ module.exports = {
         return this;
     },
     _addToolbar() {
-        return this.toolbar.size() ? this.toolbar.outerHeight() : 0;
+        return this.toolbar.length ? this.toolbar.outerHeight() : 0;
     },
     _executeScroll(offsetY) {
         this.state.scrolling = true;
