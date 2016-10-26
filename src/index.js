@@ -193,9 +193,9 @@ module.exports = {
         $(window).on('load', () => {
             viewport.root.removeClass(this.classPrefix + 'loading').addClass(this.classPrefix + 'loaded');
             viewport.loaded = true;
-        }).scroll(() => {
+        }).on('scroll', () => {
             viewport._afterScroll();
-        }).resize(() => {
+        }).on('resize', () => {
             viewport._afterResize();
         });
         return this;

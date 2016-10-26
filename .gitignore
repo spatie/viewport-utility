@@ -3,3 +3,4 @@ npm-debug.log
 /demo/css
 /demo/js
 /dist
+yarn.lock

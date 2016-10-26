@@ -32,11 +32,11 @@ function updateInviewExmaple(){
     $('[data-example-inview-result]').text((viewport.isTopInView(target)));
 }
 
-$(window).scroll(function(){
+$(window).on('scroll', function(){
     updateInviewExmaple();
 });
 
-$(window).load(function(){
+$(window).on('load', function(){
     updateInviewExmaple();
     viewport.scrollToHash();
 });
