@@ -58,7 +58,7 @@ module.exports = {
         this.root.addClass(this.classPrefix + 'scrolling');
         offsetY = offsetY - this.config.scrollOffset - this._addToolbar();
         const viewport = this;
-        $('body,html').animate({ scrollTop: offsetY }, '5000', 'swing', function () {
+        $('body,html').animate({ scrollTop: offsetY }, 400, 'swing', function () {
             viewport.state.scrolling = false;
             viewport.root.removeClass(this.classPrefix + 'scrolling');
             viewport._afterScroll();

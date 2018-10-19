@@ -2,6 +2,9 @@
 
 All Notable changes to will be documented in this file
 
+## 1.2.8 - 2018-10-19
+- Correct default scroll speed
+
 ## 1.2.7 - 2016-10-26
 - Update demo for jQuery 3
 
