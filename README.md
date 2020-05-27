@@ -8,6 +8,16 @@
 **Viewport-utility** watches the browser and updates DOM classes and JS properties for easy access in your script or stylesheet. 
 It also provides some simple functions to control scroll behaviour and a fallback for vh units in older browsers.
 
+## Support us
+
+Learn how to create a package like this one, by watching our premium video course:
+
+[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+
+We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
+
+We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+
 ## Postcardware
 
 You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment you are required to send us a postcard from your hometown, mentioning which of our package(s) you are using.
@@ -148,7 +158,6 @@ Default html needed when you don't override options:
 ...
 <div data-viewport-vh="50">Half page for iOS7</div>
 ```
-
 
 ## Change log
 
